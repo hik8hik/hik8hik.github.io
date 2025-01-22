@@ -3,7 +3,7 @@
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-donate-blue)](https://www.buymeacoffee.com/hik8hik)
 [![Patreon](https://img.shields.io/badge/Patreon-donate-blue)](https://www.patreon.com/hik8hik)
 
-Welcome to my developer portfolio! This project showcases my skills, projects, and experience as a software developer. Feel free to use this template to create your own portfolio.
+Welcome to my developer portfolio! This project showcases my skills, projects, and experience as a software developer. It is built with cutting-edge technologies to provide a modern and seamless user experience. Feel free to explore, contribute, or use this as inspiration for your own portfolio.
 
 ## Table of Contents
 
@@ -15,21 +15,22 @@ Welcome to my developer portfolio! This project showcases my skills, projects, a
 - [License](#license)
 - [Contact](#contact)
 
-## Contributing
-
-Contributions are welcome! If you have any ideas, suggestions, or improvements, please feel free to contribute. See the [CONTRIBUTING.md](CONTRIBUTING.md) file for more details.
-
 ## About
 
-This portfolio is built using [Next.js](https://nextjs.org/) and [Material UI](https://mui.com/). It is designed to be a modern, responsive, and customizable portfolio template for developers.
+This portfolio is built using:
+
+- [Next.js](https://nextjs.org/) for a powerful React-based framework with optimized performance and SEO capabilities.
+- [shadcn/ui](https://ui.shadcn.com/) for a highly customizable and accessible component library.
+- [Framer Motion](https://www.framer.com/motion/) for stunning animations and transitions.
+- [Tailwind CSS](https://tailwindcss.com/) for utility-first styling, enabling fast and responsive design.
 
 ## Features
 
-- Responsive design
-- Modern UI with Material UI
-- Easy to customize
-- SEO-friendly
-- Fast and optimized
+- **Responsive Design**: Looks great on any device.
+- **Modern Animations**: Powered by Framer Motion for fluid and dynamic user interactions.
+- **Customizable Components**: Built with shadcn/ui, making it easy to adapt to your personal style.
+- **SEO Optimized**: Enhances search engine visibility.
+- **Fast and Scalable**: Built with Next.js for blazing-fast performance.
 
 ## Setup
 
@@ -39,7 +40,7 @@ To get started with this project, follow these steps:
 
    ```bash
    git clone https://github.com/hik8hik/hik8hik.github.io.git
-    cd hik8hik.github.io.git
+   cd hik8hik.github.io
    ```
 
 2. Install dependencies using your preferred package manager:
@@ -70,21 +71,20 @@ To get started with this project, follow these steps:
    yarn dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the portfolio.
 
 ## Usage
 
-To customize the portfolio, edit the files in the [src](http://_vscodecontentref_/1) directory. You can update the content, styles, and components to match your personal brand and projects.
+You can easily customize the portfolio to match your personal brand and projects by editing files in the `src` directory. Key areas to customize include:
 
-### Note
+- **Content**: Update the text and images to showcase your work.
+- **Styling**: Modify the Tailwind CSS styles to align with your brand.
+- **Components**: Adapt the shadcn/ui components to your preferences.
+- **Animations**: Enhance or adjust animations using Framer Motion.
 
-Make sure to update the [package.json](http://_vscodecontentref_/2) file according to your project's needs, especially the `build` script. For example, if you are using yarn, you might have:
+## Contributing
 
-```json
-"scripts": {
-  "build": "yarn build"
-}
-```
+Contributions are welcome! If you have ideas, suggestions, or improvements, please feel free to contribute. See the [CONTRIBUTING.md](CONTRIBUTING.md) file for more details.
 
 ## License
 
