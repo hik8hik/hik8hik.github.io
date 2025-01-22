@@ -1,7 +1,7 @@
 # My Developer Portfolio
 
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-donate-yellow)](https://www.buymeacoffee.com/yourusername)
-[![Patreon](https://img.shields.io/badge/Patreon-donate-orange)](https://www.patreon.com/yourusername)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-donate-blue)](https://www.buymeacoffee.com/hik8hik)
+[![Patreon](https://img.shields.io/badge/Patreon-donate-blue)](https://www.patreon.com/hik8hik)
 
 Welcome to my developer portfolio! This project showcases my skills, projects, and experience as a software developer. Feel free to use this template to create your own portfolio.
 
@@ -14,6 +14,10 @@ Welcome to my developer portfolio! This project showcases my skills, projects, a
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
+
+## Contributing
+
+Contributions are welcome! If you have any ideas, suggestions, or improvements, please feel free to contribute. See the [CONTRIBUTING.md](CONTRIBUTING.md) file for more details.
 
 ## About
 
@@ -33,32 +37,54 @@ To get started with this project, follow these steps:
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/yourusername/your-repo-name.git
-    cd your-repo-name
-    ```
+   ```bash
+   git clone https://github.com/hik8hik/hik8hik.github.io.git
+    cd hik8hik.github.io.git
+   ```
 
-2. Install dependencies:
+2. Install dependencies using your preferred package manager:
 
-    ```bash
-    npm install
-    ```
+   Using npm:
+
+   ```bash
+   npm install
+   ```
+
+   Using yarn:
+
+   ```bash
+   yarn install
+   ```
 
 3. Run the development server:
 
-    ```bash
-    npm run dev
-    ```
+   Using npm:
+
+   ```bash
+   npm run dev
+   ```
+
+   Using yarn:
+
+   ```bash
+   yarn dev
+   ```
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Usage
 
-To customize the portfolio, edit the files in the `src` directory. You can update the content, styles, and components to match your personal brand and projects.
+To customize the portfolio, edit the files in the [src](http://_vscodecontentref_/1) directory. You can update the content, styles, and components to match your personal brand and projects.
 
-## Contributing
+### Note
 
-Contributions are welcome! If you have any ideas, suggestions, or improvements, please feel free to contribute. See the [CONTRIBUTING.md](CONTRIBUTING.md) file for more details.
+Make sure to update the [package.json](http://_vscodecontentref_/2) file according to your project's needs, especially the `build` script. For example, if you are using yarn, you might have:
+
+```json
+"scripts": {
+  "build": "yarn build"
+}
+```
 
 ## License
 
@@ -68,8 +94,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 Feel free to reach out to me on my social media:
 
-- [GitHub](https://github.com/yourusername)
-- [LinkedIn](https://www.linkedin.com/in/yourusername)
-- [Twitter](https://twitter.com/yourusername)
-
-Thank you for visiting my portfolio!
+- [GitHub](https://github.com/hik8hik)
+- [LinkedIn](https://www.linkedin.com/in/hik8hik)
+- [Twitter](https://x.com/hikhik6)
