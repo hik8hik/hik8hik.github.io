@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    output: process.env.NEXT_PUBLIC_OUTPUT || undefined,
 
-export default nextConfig;
+    images: {
+        domains: ["localhost"],
+        remotePatterns: [{
+            protocol: "https",
+            hostname: "cdn.sanity.io",
+            port: "",
+        }, ],
+    },
+};
+
+module.exports = nextConfig;

@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "next build",
+        "build": "cross-env NEXT_PUBLIC_OUTPUT=export next build",
         "predeploy": "yarn build",
         "deploy": "gh-pages -d out",
         "start": "next start",
@@ -23,5 +23,8 @@
         "next": "^15.0.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3"
     }
 }
