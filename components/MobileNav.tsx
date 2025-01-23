@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 //components
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { AlignRight, Menu } from "lucide-react";
+import { AlignRight } from "lucide-react";
 
 const links = [
   {
