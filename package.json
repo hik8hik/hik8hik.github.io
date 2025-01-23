@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "next dev --turbopack",
         "build": "cross-env NEXT_PUBLIC_OUTPUT=export next build",
-        "predeploy": "yarn build",
+        "predeploy": "cross-env NEXT_PUBLIC_OUTPUT=export next build",
         "deploy": "gh-pages -d out",
         "start": "next start",
         "lint": "next lint"
