@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
+// components
+import Header from "@/components/Header";
+import PageTransition from "@/components/PageTransition";
+import ThinkTypeTransition from "@/components/ThinkTypeTransition";
+
 const getbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
   subsets: ["latin"],
@@ -21,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${getbrainsMono.variable} antialiased`}>
-        {children}
+        <Header />
+        <ThinkTypeTransition />
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );

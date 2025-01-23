@@ -1,57 +1,62 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { Download } from "lucide-react";
+
+//components
+import Social from "@/components/Social";
+import { Button } from "@/components/ui/button";
+import Photo from "@/components/Photo";
+import Stats from "@/components/Stats";
+
+const Home = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start"></main>
-      homepage
-      {/* <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer> */}
-    </div>
+    <section className="h-full">
+      <div className="container mx-auto h-full">
+        <div className="flex flex-col justify-between items-center h-full xl:flex-row xl:pt-8 xl:pb-28">
+          {/* text */}
+          <div className="text-center xl:text-left order-2 xl:order-none">
+            <span>Software Developer</span>
+            <h1 className="h1 mb-6">
+              Hello I'm <br /> <span className="text-accent">Hik Hik</span>
+            </h1>
+            <p className="max-w-[500px]">
+              I specialize in creating elegant and seamless digital experiences,
+              with expertise in a wide range of programming languages and
+              technologies.
+            </p>
+
+            {/* btn & soxials */}
+            <div className="flex flex-col gap-4 mt-8 xl:flex-row xl:gap-8">
+              <a href="/app/files/03c22v.pdf" download="03c22v.pdf">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="uppercase flex items-center gap-2"
+                >
+                  <span>Download CV</span>
+                  <Download className="text-xl" />
+                </Button>
+              </a>
+              <div className="mb-8 xl:mb-0">
+                <Social
+                  containerStyles={"flex gap-6 flex-wrap"}
+                  iconStyles={
+                    "w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
+                  }
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* photo */}
+          <div className="order-1 xl:order-none mb-8 xl:mb-0">
+            <Photo />
+          </div>
+        </div>
+      </div>
+      <Stats />
+    </section>
   );
-}
+};
+
+export default Home;

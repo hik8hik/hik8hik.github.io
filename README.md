@@ -96,4 +96,4 @@ Feel free to reach out to me on my social media:
 
 - [GitHub](https://github.com/hik8hik)
 - [LinkedIn](https://www.linkedin.com/in/hik8hik)
-- [Twitter](https://x.com/hikhik6)
+- [Twitter](https://x.com/hik_8_hik)
