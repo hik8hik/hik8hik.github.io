@@ -31,10 +31,10 @@ const Stats = () => {
         <div className="flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none">
           {stats.map((stat, index) => {
             return (
-              <div
+                <div
                 key={index}
-                className="flex-1 flex gap-4 justify-center items-center xl:justify-start"
-              >
+                className="flex-1 flex flex-col gap-4 justify-center items-center xl:flex-row xl:justify-start"
+                >
                 <CountUp
                   end={stat.num}
                   duration={5}
@@ -43,12 +43,12 @@ const Stats = () => {
                 />
                 <p
                   className={`${
-                    stat.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
-                  } leading-snug text-white/80`}
+                  stat.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
+                  } leading-snug text-white/80 text-center xl:text-left`}
                 >
                   {stat.text}
                 </p>
-              </div>
+                </div>
             );
           })}
         </div>
