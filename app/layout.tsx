@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import ThinkTypeTransition from "@/components/ThinkTypeTransition";
+import ParticleBackground from "@/components/effects/ParticleBackground";
 
 const getbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
@@ -28,7 +29,9 @@ export default function RootLayout({
       <body className={`${getbrainsMono.variable} antialiased`}>
         <Header />
         <ThinkTypeTransition />
-        <PageTransition>{children}</PageTransition>
+        <PageTransition>
+          <ParticleBackground>{children}</ParticleBackground>{" "}
+        </PageTransition>
       </body>
     </html>
   );
