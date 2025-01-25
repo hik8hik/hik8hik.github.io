@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[736],{5865:(e,s,r)=>{Promise.resolve().then(r.bind(r,3802))},3802:(e,s,r)=>{"use strict";r.r(s),r.d(s,{default:()=>l});var a=r(5155);let l=()=>(0,a.jsx)("div",{children:"Resume page"})}},e=>{var s=s=>e(e.s=s);e.O(0,[441,517,358],()=>s(5865)),_N_E=e.O()}]);
