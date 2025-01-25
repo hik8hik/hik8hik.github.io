@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, CircleArrowLeft } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useSwiper } from "swiper/react";
 
 interface WorkSliderButtonsProps {
