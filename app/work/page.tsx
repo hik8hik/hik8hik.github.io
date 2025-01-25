@@ -8,12 +8,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 //components
-import {
-  TooltipProvider,
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from "@/components/ui/tooltip";
 import { Eye, Github } from "lucide-react";
 import WorkSliderButtons from "@/components/WorkSliderButtons";
 
