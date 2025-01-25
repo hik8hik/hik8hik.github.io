@@ -77,25 +77,27 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My Experience",
   description:
-    "I have 12+ years of experience in the field of web development. I have worked with various clients and companies. I have a good understanding of the latest technologies and trends in the industry.",
+    "I have 12+ years of experience in the field of tech. I have worked with various clients and companies. I have a good understanding of the latest technologies and trends in the industry.",
   jobs: [
     {
       title: "Senior Developer",
-      company: "Company Name",
-      duration: "2018 - Present",
+      company: "*** ***",
+      duration: "2020 - Present",
       description: "I am working...",
     },
     {
-      title: "Frontend Developer",
-      company: "Company Name",
-      duration: "2015 - 2018",
-      description: "I worked...",
+      title: "Geneal IT Manager",
+      company: "Tanay Telesystems",
+      duration: "2019 - 2020",
+      description:
+        "Database management. Server setup. Manage the company's website. Fullstack development.",
     },
     {
       title: "Junior Developer",
-      company: "Company Name",
-      duration: "2012 - 2015",
-      description: "I started...",
+      company: "German Kenya Sauages",
+      duration: "2016 - 2018",
+      description:
+        "Email server setup. Indoor Invoice & Order Management System. Manage the company's website.",
     },
   ],
 };
@@ -108,16 +110,28 @@ const education = {
     "I have completed my Master's degree in Computer Science. I have a good understanding of the latest technologies and trends in the industry.",
   degrees: [
     {
+      title: "NetApp ONTAP 9.7",
+      university: "Flackbox",
+      duration: "Ongoing...",
+      description: "Studying[20%]",
+    },
+    {
+      title: "Cisco CCNA 200-301",
+      university: "Flackbox",
+      duration: "Ongoing...",
+      description: "Studying",
+    },
+    {
       title: "Master's Degree",
-      university: "University Name",
-      duration: "2010 - 2012",
-      description: "I completed my Master's degree...",
+      university: "*** ***",
+      duration: "2020 - 2024",
+      description: "Computer Science",
     },
     {
       title: "Bachelor's Degree",
-      university: "University Name",
-      duration: "2006 - 2010",
-      description: "I completed my Bachelor's degree...",
+      university: "*** ***",
+      duration: "2016 - 2020",
+      description: "Computer Science",
     },
   ],
 };
@@ -289,7 +303,7 @@ const Resume = () => {
                     {experience.jobs.map((job, index) => (
                       <li
                         key={index}
-                        className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        className="bg-[#232329] h-[300px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                       >
                         <span className="text-accent">{job.duration}</span>
                         <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left font-bold">
