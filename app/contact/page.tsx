@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPinMinus, MessageCircle, Phone } from "lucide-react";
 
 //components
 import { Input } from "@/components/ui/input";
@@ -16,17 +15,9 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Item } from "@radix-ui/react-select";
 
-const info = [
-  { icon: <Phone />, title: "Phone", data: "(123) 456-7890" },
-  { icon: <MessageCircle />, title: "Email", data: "hik8hik@gmail.com" },
-  {
-    icon: <MapPinMinus />,
-    title: "Address",
-    data: "1234 Main St, City, State 12345",
-  },
-];
+// data
+import { info } from "../data/data";
 
 const Contact = () => {
   return (
@@ -87,15 +78,17 @@ const Contact = () => {
           <div className="flex flex-1 items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
             <ul className="flex flex-col gap-10">
               {info.map((info, infoIndex) => (
-                <li key={infoIndex} className="flex items-center gap-6">
-                  <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-xl flex items-center justify-center">
-                    <div className="text-[28px]">{info.icon}</div>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-white/60">{info.title}</p>
-                    <h3 className="text-xl">{info.data}</h3>
-                  </div>
-                </li>
+                <a key={infoIndex} href={info.href} target={info.target}>
+                  <li className="flex items-center gap-6">
+                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-xl flex items-center justify-center">
+                      <div className="text-[28px]">{info.icon}</div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-white/60">{info.title}</p>
+                      <h3 className="text-xl">{info.data}</h3>
+                    </div>
+                  </li>
+                </a>
               ))}
             </ul>
           </div>
