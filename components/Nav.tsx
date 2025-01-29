@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ModeToggle } from "./themeToggle";
 
 const links = [
   {
@@ -44,6 +45,7 @@ const Nav = () => {
           </Link>
         );
       })}
+      <ModeToggle />
     </nav>
   );
 };

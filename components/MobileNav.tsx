@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 //components
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { AlignRight } from "lucide-react";
+import { ModeToggle } from "./themeToggle";
 
 const links = [
   {
@@ -39,6 +40,8 @@ const MobileNav = () => {
       </SheetTrigger>
 
       <SheetContent className="flex flex-col gap-4 p-8">
+        {/* theme toggle */}
+        <ModeToggle />
         {/* logo */}
         <div className="mt-32 mb-40 text-accent text-2xl">
           <Link href={"/"} className="flex items-center gap-2 cursor-pointer">

@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import ThinkTypeTransition from "@/components/ThinkTypeTransition";
 import ParticleBackground from "@/components/effects/ParticleBackground";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const getbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
@@ -27,11 +28,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${getbrainsMono.variable} antialiased`}>
-        <Header />
-        <ThinkTypeTransition />
-        <PageTransition>
-          <ParticleBackground>{children}</ParticleBackground>{" "}
-        </PageTransition>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <ThinkTypeTransition />
+          <PageTransition>
+            <ParticleBackground>{children}</ParticleBackground>{" "}
+          </PageTransition>
+        </ThemeProvider>
       </body>
     </html>
   );
