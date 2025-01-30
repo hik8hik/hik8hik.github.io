@@ -286,6 +286,73 @@ const skills = {
   ],
 };
 
+/* WORK: data */
+const projects = [
+  {
+    num: "01",
+    title: "Portfolio",
+    category: "frontend",
+    description: "My personal portfolio website",
+    stack: [
+      { name: "Next.js", usage: "Frontend" },
+      { name: "TypeScript", usage: "Frontend" },
+      { name: "Tailwind CSS", usage: "Frontend" },
+    ],
+    image: "assets/work/thumb1.png",
+    link: "https://hik8hik.github.io",
+    github: "https://github.com/hik8hik/hik8hik.github.io",
+  },
+  {
+    num: "02",
+    title: "Financial Dashboard",
+    category: "fullstack",
+    description: "A financial dashboard for tracking expenses, income, etc.",
+    stack: [
+      { name: "Next.js", usage: "Frontend" },
+      { name: "TypeScript", usage: "Frontend" },
+      { name: "Tailwind CSS", usage: "Frontend" },
+      { name: "Node.js", usage: "Backend" },
+      { name: "MongoDB", usage: "Database" },
+    ],
+    image: "assets/work/finsgram_landing.png",
+    link: "https://finsgram-d21a2.web.app",
+    github: "",
+  },
+  {
+    num: "03",
+    title: "RN Finance App",
+    category: "mobile",
+    description: "A finance app built with React Native",
+    stack: [
+      { name: "React Native", usage: "Frontend" },
+      { name: "TypeScript", usage: "Frontend" },
+      { name: "Tailwind CSS", usage: "Frontend" },
+      { name: "Node.js", usage: "Backend" },
+      { name: "MongoDB", usage: "Database" },
+      { name: "Expo", usage: "Mobile" },
+    ],
+    image: "assets/work/thumb3.png",
+    link: "",
+    github: "",
+  },
+  {
+    num: "04",
+    title: "Hospital Management",
+    category: "fullstack",
+    description: "A hospital management system",
+    stack: [
+      { name: "HTML5", usage: "Frontend" },
+      { name: "CSS3", usage: "Frontend" },
+      { name: "JavaScript", usage: "Frontend" },
+      { name: "SQL", usage: "Backend" },
+      { name: "PHP", usage: "Backend" },
+    ],
+    image: "assets/work/hms2020php.png",
+    link: "",
+    github: "",
+  },
+];
+
 /* CONTACT: data ======================================================================================= */
 const info = [
   {
@@ -318,4 +385,4 @@ const info = [
   },
 ];
 
-export { services, about, experience, education, skills, info };
+export { services, about, experience, education, skills, projects, info };
