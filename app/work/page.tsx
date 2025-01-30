@@ -10,72 +10,8 @@ import "swiper/css";
 //components
 import { Eye, Github } from "lucide-react";
 import WorkSliderButtons from "@/components/WorkSliderButtons";
+import { projects } from "../data/data";
 
-const projects = [
-  {
-    num: "01",
-    title: "Portfolio",
-    category: "frontend",
-    description: "My personal portfolio website",
-    stack: [
-      { name: "Next.js", usage: "Frontend" },
-      { name: "TypeScript", usage: "Frontend" },
-      { name: "Tailwind CSS", usage: "Frontend" },
-    ],
-    image: "assets/work/thumb1.png",
-    link: "https://hik8hik.github.io",
-    github: "https://github.com/hik8hik/hik8hik.github.io",
-  },
-  {
-    num: "02",
-    title: "Financial Dashboard",
-    category: "fullstack",
-    description: "A financial dashboard for tracking expenses, income, etc.",
-    stack: [
-      { name: "Next.js", usage: "Frontend" },
-      { name: "TypeScript", usage: "Frontend" },
-      { name: "Tailwind CSS", usage: "Frontend" },
-      { name: "Node.js", usage: "Backend" },
-      { name: "MongoDB", usage: "Database" },
-    ],
-    image: "assets/work/finsgram_landing.png",
-    link: "https://finsgram-d21a2.web.app",
-    github: "",
-  },
-  {
-    num: "03",
-    title: "RN Finance App",
-    category: "mobile",
-    description: "A finance app built with React Native",
-    stack: [
-      { name: "React Native", usage: "Frontend" },
-      { name: "TypeScript", usage: "Frontend" },
-      { name: "Tailwind CSS", usage: "Frontend" },
-      { name: "Node.js", usage: "Backend" },
-      { name: "MongoDB", usage: "Database" },
-      { name: "Expo", usage: "Mobile" },
-    ],
-    image: "assets/work/thumb3.png",
-    link: "",
-    github: "",
-  },
-  {
-    num: "04",
-    title: "Hospital Management",
-    category: "fullstack",
-    description: "A hospital management system",
-    stack: [
-      { name: "HTML5", usage: "Frontend" },
-      { name: "CSS3", usage: "Frontend" },
-      { name: "JavaScript", usage: "Frontend" },
-      { name: "SQL", usage: "Backend" },
-      { name: "PHP", usage: "Backend" },
-    ],
-    image: "assets/work/hms2020php.png",
-    link: "",
-    github: "",
-  },
-];
 const Work = () => {
   const [activeProject, setActiveProject] = useState(projects[0]);
   return (
@@ -92,16 +28,16 @@ const Work = () => {
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="w-full xl:w-[50%]">
               {/* outline num */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+              <div className="text-8xl font-extrabold text-outline text-transparent dark-text-outline dark:text-outline dark:group-hover:text-outline-hover transition-all duration-500">
                 {activeProject.num}
               </div>
               {/* project category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+              <h2 className="text-[42px] font-bold leading-none text-[#08c67a] group-hover:text-[#08c67a] dark:text-accent transition-all duration-500 capitalize">
                 {activeProject.category} Project
               </h2>
 
               {/* project description */}
-              <p className="mt-4 text-lg text-white opacity-70">
+              <p className="mt-4 text-lg text-black dark:text-white opacity-70">
                 {activeProject.description}
               </p>
               {/* stack */}
@@ -109,19 +45,17 @@ const Work = () => {
                 {activeProject.stack.map((tech, index) => (
                   <li
                     key={index}
-                    className="text-white opacity-70 text-md xl:text-xl"
+                    className="text-black dark:text-white opacity-70 text-md xl:text-xl"
                   >
-                    {tech.name}
-                    {/* no last comma */}
-                    {index !== activeProject.stack.length - 1 && "|"}
-                    <span className="align-subscript text-xs text-accent">
+                    {tech.name}|
+                    <span className="align-subscript text-xs text-[#08c67a] dark:text-accent">
                       .{tech.usage}
                     </span>
                   </li>
                 ))}
               </ul>
               {/* divider */}
-              <div className="border-t border-white w-full"></div>
+              <div className="border-t border-black dark:border-white w-full"></div>
               {/* buttons */}
               <div className="flex gap-4 mt-4">
                 <Link

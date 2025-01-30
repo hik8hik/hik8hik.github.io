@@ -4,6 +4,7 @@ import Link from "next/link";
 import Nav from "./Nav";
 import { Button } from "./ui/button";
 import MobileNav from "./MobileNav";
+import { ModeToggle } from "./themeToggle";
 
 const Header = () => {
   return (
@@ -11,8 +12,8 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* logo */}
         <Link href={"/"}>
-          <h1 className="text-4xl font-semibold cursor-pointer">
-            Hik Hik <span className="text-accent">.</span>
+          <h1 className="text-4xl font-semibold cursor-pointer text-black dark:text-white">
+            Hik Hik <span className="text-[#08c67a] dark:text-accent">.</span>
           </h1>
         </Link>
 
@@ -22,6 +23,7 @@ const Header = () => {
           <Link href={"/contact"}>
             <Button>Hire me</Button>
           </Link>
+          <ModeToggle />
         </div>
 
         {/* mobile nav */}

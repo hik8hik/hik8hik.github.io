@@ -16,7 +16,7 @@ const buttonVariants = cva(
         destructive:
           "bg-red-500 text-slate-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-slate-50 dark:hover:bg-red-900/90",
         outline:
-          "border border-accent text-accent hover:bg-accent-hover hover:text-primary bg-transparent dark:border-accent dark:text-accent dark:hover:bg-accent/90 dark:hover:text-primary dark:bg-transparent",
+          "border border-accent text-[#08c67a] dark:text-accent hover:bg-accent-hover hover:text-primary bg-transparent dark:border-accent dark:text-[#08c67a] dark:text-accent dark:hover:bg-accent/90 dark:hover:text-primary dark:bg-transparent",
         secondary:
           "bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80",
         ghost:
@@ -25,6 +25,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "h-[44px] px-6",
+        sm: "h-[24px] px-2 text-xs",
         md: "h-[48px] px-6",
         lg: "h-[56px] px-8 text-sm uppercase tracking-[2px]",
       },

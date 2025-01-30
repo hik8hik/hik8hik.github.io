@@ -36,8 +36,10 @@ const Resume = () => {
             {/* experience */}
             <TabsContent value="experience" className="w-full">
               <div className=" flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold ">{experience.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <h3 className="text-4xl font-bold text-black dark:text-white">
+                  {experience.title}
+                </h3>
+                <p className="max-w-[600px] text-black/60 dark:text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -45,17 +47,24 @@ const Resume = () => {
                     {experience.jobs.map((job, index) => (
                       <li
                         key={index}
-                        className="bg-[#232329] h-[300px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        className="bg-[#29292c] dark:bg-[#29292c] hover:bg-[#6f6f6f] dark:hover:bg-[#36363a] h-[500px] py-6 px-10 rounded-xl flex flex-col justify-start items-center lg:items-start gap-1 group"
                       >
-                        <span className="text-accent">{job.duration}</span>
-                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left font-bold">
+                        <span className="text-[#08c67a] dark:text-accent">
+                          {job.duration}
+                        </span>
+                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left font-bold text-white group-hover:tracking-widest transition-all duration-1000">
                           {job.title}
                         </h3>
+                        <div className="flex fle-row justify-center items-center gap-3">
+                          <span className="w-[6px] h-[6px] rounded-full bg-accent border-accent"></span>
+                          <p className="text-white/90">{job.company}</p>
+                        </div>
                         <div className="flex items-center gap-3">
                           {/* dot */}
-                          <span className="w-[6px] h-[6px] rounded-full bg-accent border-accent"></span>
-                          <p className="text-white/60">{job.company}</p>
-                          <p className="text-white/60">{job.description}</p>
+
+                          <p className="text-white/60 dark:text-white/60">
+                            {job.description}
+                          </p>
                         </div>
                       </li>
                     ))}
@@ -66,8 +75,10 @@ const Resume = () => {
             {/* education */}
             <TabsContent value="education" className="w-full">
               <div className=" flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold ">{education.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <h3 className="text-4xl font-bold text-black dark:text-white">
+                  {education.title}
+                </h3>
+                <p className="max-w-[600px] text-black/60 dark:text-white/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -75,10 +86,10 @@ const Resume = () => {
                     {education.degrees.map((degree, index) => (
                       <li
                         key={index}
-                        className="bg-[#232329] h-[200px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        className="bg-[#29292c] dark:bg-[#29292c] hover:bg-[#6f6f6f] dark:hover:bg-[#36363a] h-[300px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 group"
                       >
                         <span className="text-accent">{degree.duration}</span>
-                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left font-bold">
+                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left font-bold text-white group-hover:tracking-widest transition-all duration-1000">
                           {degree.title}
                         </h3>
                         <div className="flex items-center gap-3">
@@ -96,8 +107,10 @@ const Resume = () => {
             {/* skills */}
             <TabsContent value="skills" className="w-full">
               <div className=" flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold ">{skills.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <h3 className="text-4xl font-bold text-black dark:text-white">
+                  {skills.title}
+                </h3>
+                <p className="max-w-[600px] text-black/60 dark:text-white/60 mx-auto xl:mx-0">
                   {skills.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -105,14 +118,14 @@ const Resume = () => {
                     {skills.categories.map((category, index) => (
                       <li
                         key={index}
-                        className="hover:bg-[#232329] h-[400px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 group"
+                        className="bg-transparent hover:bg-[#6f6f6f] dark:hover:bg-[#29292c] h-[400px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 group"
                       >
                         <div className="flex flex-row gap-[30px] justify-center">
-                          <span className="text-accent group-hover:text-white">
+                          <span className="text-[#08c67a] dark:text-accent group-hover:text-white">
                             {category.icon}
                           </span>
                           <span className="mt-2 group-hover:w-[6px] group-hover:h-[6px] group-hover:rounded-full group-hover:bg-accent group-hover:border group-hover:border-white transition-all duration-1000"></span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left font-bold group-hover:text-accent group-hover:tracking-widest transition-all duration-1000">
+                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-black dark:text-white text-center lg:text-left font-bold group-hover:text-[#08c67a] group-hover:tracking-widest transition-all duration-1000">
                             {category.title}
                           </h3>
                         </div>
@@ -127,13 +140,13 @@ const Resume = () => {
                                   <div className="flex items-center gap-2">
                                     <p
                                       data-tooltip-target={skill.name}
-                                      className="text-white/60 group-hover:text-accent"
+                                      className="text-black/60 dark:text-white/60 group-hover:text-[#08c67a] dark:text-accent"
                                     >
                                       {skill.icon}
                                     </p>
                                     <p
                                       data-tooltip-target={skill.name}
-                                      className="text-white/60 group-hover:tracking-widest transition-all duration-1000"
+                                      className="text-black/60 dark:text-white/60 group-hover:text-white/60 group-hover:tracking-widest transition-all duration-1000"
                                     >
                                       {skill.name}
                                     </p>
@@ -155,8 +168,10 @@ const Resume = () => {
               className="w-full text-center xl:text-left"
             >
               <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <h3 className="text-4xl font-bold text-black dark:text-white">
+                  {about.title}
+                </h3>
+                <p className="max-w-[600px] text-black/60 dark:text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
@@ -165,8 +180,12 @@ const Resume = () => {
                       key={infoIndex}
                       className="flex items-center justify-center xl:justify-start gap-4"
                     >
-                      <span className="text-white/60">{info.fieldname}</span>
-                      <span className="text-xl">{info.fieldvalue}</span>
+                      <span className="text-black/60 dark:text-white/60">
+                        {info.fieldname}
+                      </span>
+                      <span className="text-black dark:text-white text-xl">
+                        {info.fieldvalue}
+                      </span>
                     </li>
                   ))}
                 </ul>

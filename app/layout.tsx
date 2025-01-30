@@ -16,8 +16,8 @@ const getbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "hik8hik",
-  description: "hik8hik's Portfolio",
+  title: "HIk Hik",
+  description: "Hik HIk's Portfolio",
 };
 
 export default function RootLayout({
@@ -27,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${getbrainsMono.variable} antialiased`}>
+      <body
+        className={`${getbrainsMono.variable} antialiased bg-white dark:bg-primary dark:text-white`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -37,7 +39,7 @@ export default function RootLayout({
           <Header />
           <ThinkTypeTransition />
           <PageTransition>
-            <ParticleBackground>{children}</ParticleBackground>{" "}
+            <ParticleBackground>{children}</ParticleBackground>
           </PageTransition>
         </ThemeProvider>
       </body>

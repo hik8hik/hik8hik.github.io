@@ -1,9 +1,11 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import { ReactNode, useEffect, useRef } from "react";
 
 const ParticleBackground = ({ children }: { children: ReactNode }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const theme = useTheme().theme;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -50,7 +52,7 @@ const ParticleBackground = ({ children }: { children: ReactNode }) => {
 
           ctx.beginPath();
           ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-          ctx.fillStyle = "white";
+          ctx.fillStyle = theme === "dark" ? "white" : "blue";
           ctx.fill();
         });
       }
@@ -65,7 +67,7 @@ const ParticleBackground = ({ children }: { children: ReactNode }) => {
     return () => {
       window.removeEventListener("resize", resizeCanvas);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100vh" }}>

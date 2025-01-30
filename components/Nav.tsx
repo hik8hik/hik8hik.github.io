@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ModeToggle } from "./themeToggle";
 
 const links = [
   {
@@ -38,14 +37,16 @@ const Nav = () => {
             key={index}
             href={link.path}
             className={`${
-              pathname === link.path && "text-accent border-b-2 border-accent"
-            } capitalize font-medium hover:text-accent transition-all`}
+              pathname === link.path &&
+              "text-[#08c67a] dark:text-accent border-b-2 border-accent"
+            } capitalize font-medium  hover:text-[#08c67a] dark:hover:text-accent transition-all ${
+              pathname !== link.path && "text-black dark:text-white"
+            }`}
           >
             {link.name}
           </Link>
         );
       })}
-      <ModeToggle />
     </nav>
   );
 };

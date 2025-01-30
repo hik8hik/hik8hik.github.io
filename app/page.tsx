@@ -15,12 +15,14 @@ const Home = () => {
         <div className="flex flex-col justify-between items-center h-full xl:flex-row xl:pt-8 xl:pb-28">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span>Software Developer</span>
-            <h1 className="h1 mb-6">
+            <span className="text-black dark:text-white">
+              Software Developer
+            </span>
+            <h1 className="h1 mb-6 text-black dark:text-white">
               Hello I &apos; m <br />{" "}
-              <span className="text-accent">Hik Hik</span>
+              <span className="text-[#08c67a] dark:text-accent">Hik Hik</span>
             </h1>
-            <p className="max-w-[500px]">
+            <p className="max-w-[500px] text-black dark:text-white">
               I specialize in creating elegant and seamless digital experiences,
               with expertise in a wide range of programming languages and
               technologies.
@@ -42,7 +44,7 @@ const Home = () => {
                 <Social
                   containerStyles={"flex gap-6 flex-wrap"}
                   iconStyles={
-                    "w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
+                    "w-9 h-9 border border-accent rounded-full flex justify-center items-center text-[#08c67a] dark:text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
                   }
                 />
               </div>

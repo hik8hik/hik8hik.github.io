@@ -26,5 +26,9 @@
     .text-outline-hover{
         -webkit-text-stroke: 1px #00ff99;
     }
+
+    .dark-text-outline{
+        -webkit-text-stroke: 1px #000000;
+    }
 }
 

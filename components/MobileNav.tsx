@@ -36,17 +36,17 @@ const MobileNav = () => {
   return (
     <Sheet>
       <SheetTrigger className="flex justify-center items-center">
-        <AlignRight className="text-[32px] text-accent" />
+        <AlignRight className="text-[32px] text-[#08c67a] dark:text-accent" />
       </SheetTrigger>
 
       <SheetContent className="flex flex-col gap-4 p-8">
         {/* theme toggle */}
         <ModeToggle />
         {/* logo */}
-        <div className="mt-32 mb-40 text-accent text-2xl">
+        <div className="mt-32 mb-40 text-[#08c67a] dark:text-accent text-2xl">
           <Link href={"/"} className="flex items-center gap-2 cursor-pointer">
             <h1 className="text-4xl font-semibold cursor-pointer">
-              Hik Hik <span className="text-accent">.</span>
+              Hik Hik <span className="text-[#08c67a] dark:text-accent">.</span>
             </h1>
           </Link>
         </div>
@@ -58,8 +58,8 @@ const MobileNav = () => {
                 href={link.path}
                 className={`${
                   pathname === link.path &&
-                  "text-accent border-b-2 border-accent"
-                } capitalize font-medium hover:text-accent transition-all`}
+                  "text-[#08c67a] dark:text-accent border-b-2 border-accent"
+                } capitalize font-medium hover:text-[#08c67a] dark:text-accent transition-all`}
               >
                 {link.name}
               </Link>
