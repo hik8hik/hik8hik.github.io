@@ -14,7 +14,6 @@ export function ModeToggle() {
     setCurrentTheme(theme);
   }, [theme]);
 
-  /* handle toggle */
   const handleToggle = () => {
     if (currentTheme === "light") {
       setTheme("dark");
