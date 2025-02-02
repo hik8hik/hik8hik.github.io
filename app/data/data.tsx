@@ -290,6 +290,23 @@ const skills = {
 const projects = [
   {
     num: "01",
+    title: "Sky Field Aerotech",
+    category: "fullstack",
+    description:
+      "Sky Field is a company using drones to help farmers in Kenya.",
+    stack: [
+      { name: "Next.js", usage: "Frontend" },
+      { name: "TypeScript", usage: "Frontend" },
+      { name: "Tailwind CSS", usage: "Frontend" },
+      { name: "Node.js", usage: "Backend" },
+      { name: "MongoDB", usage: "Database" },
+    ],
+    image: "assets/work/thumb1.png",
+    link: "https://skyfieldaerotech-webclient.vercel.app/",
+    github: "https://github.com/hik8hik/skyfieldaerotech_webclient",
+  },
+  {
+    num: "02",
     title: "Portfolio",
     category: "frontend",
     description: "My personal portfolio website",
@@ -303,7 +320,7 @@ const projects = [
     github: "https://github.com/hik8hik/hik8hik.github.io",
   },
   {
-    num: "02",
+    num: "03",
     title: "Financial Dashboard",
     category: "fullstack",
     description: "A financial dashboard for tracking expenses, income, etc.",
@@ -319,7 +336,7 @@ const projects = [
     github: "",
   },
   {
-    num: "03",
+    num: "04",
     title: "RN Finance App",
     category: "mobile",
     description: "A finance app built with React Native",
@@ -336,7 +353,7 @@ const projects = [
     github: "",
   },
   {
-    num: "04",
+    num: "05",
     title: "Hospital Management",
     category: "fullstack",
     description: "A hospital management system",
