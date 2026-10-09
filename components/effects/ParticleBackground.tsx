@@ -1,24 +1,28 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { ReactNode, useEffect, useRef } from "react";
+import { type ReactNode, useEffect, useRef } from "react";
+
+type Particle = {
+  x: number;
+  y: number;
+  radius: number;
+  speedX: number;
+  speedY: number;
+};
 
 const ParticleBackground = ({ children }: { children: ReactNode }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const theme = useTheme().theme;
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext("2d");
-    const particles: {
-      x: number;
-      y: number;
-      radius: number;
-      speedX: number;
-      speedY: number;
-    }[] = [];
+    if (!ctx) return;
+
+    const particles: Particle[] = [];
+    let raf = 0;
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -26,7 +30,7 @@ const ParticleBackground = ({ children }: { children: ReactNode }) => {
     };
 
     const createParticles = () => {
-      particles.length = 0; // Clear existing particles
+      particles.length = 0;
       for (let i = 0; i < 100; i++) {
         particles.push({
           x: Math.random() * canvas.width,
@@ -39,51 +43,46 @@ const ParticleBackground = ({ children }: { children: ReactNode }) => {
     };
 
     const updateParticles = () => {
-      if (ctx) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach((particle) => {
-          particle.x += particle.speedX;
-          particle.y += particle.speedY;
-
-          if (particle.x < 0 || particle.x > canvas.width)
-            particle.speedX *= -1;
-          if (particle.y < 0 || particle.y > canvas.height)
-            particle.speedY *= -1;
-
-          ctx.beginPath();
-          ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-          ctx.fillStyle = theme === "dark" ? "white" : "blue";
-          ctx.fill();
-        });
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const fill = resolvedTheme === "dark" ? "#ffffff" : "#1c1c22";
+      for (const p of particles) {
+        p.x += p.speedX;
+        p.y += p.speedY;
+        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = fill;
+        ctx.fill();
       }
-      requestAnimationFrame(updateParticles);
+      raf = requestAnimationFrame(updateParticles);
     };
 
     resizeCanvas();
     createParticles();
     updateParticles();
-    window.addEventListener("resize", resizeCanvas);
+
+    const onResize = () => {
+      resizeCanvas();
+      createParticles();
+    };
+    window.addEventListener("resize", onResize);
 
     return () => {
-      window.removeEventListener("resize", resizeCanvas);
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", onResize);
     };
-  }, [theme]);
+  }, [resolvedTheme]);
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100vh" }}>
+    <div className="relative w-full min-h-screen">
       <canvas
         ref={canvasRef}
         id="dustCanvas"
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: -1,
-        }}
-      ></canvas>
-      <div style={{ position: "relative", zIndex: 1 }}>{children}</div>
+        className="fixed inset-0 w-full h-full -z-10 pointer-events-none"
+        aria-hidden="true"
+      />
+      <div className="relative z-[1]">{children}</div>
     </div>
   );
 };
