@@ -2,7 +2,7 @@
 
 import { Download } from "lucide-react";
 
-//components
+// components
 import Social from "@/components/Social";
 import { Button } from "@/components/ui/button";
 import Photo from "@/components/Photo";
@@ -19,18 +19,17 @@ const Home = () => {
               Software Developer
             </span>
             <h1 className="h1 mb-6 text-black dark:text-white">
-              Hello I &apos; m <br />{" "}
+              Hello, I&apos;m <br />{" "}
               <span className="text-[#08c67a] dark:text-accent">Hik Hik</span>
             </h1>
             <p className="max-w-[500px] text-black dark:text-white">
-              I specialize in creating elegant and seamless digital experiences,
-              with expertise in a wide range of programming languages and
-              technologies.
+              I design and ship elegant, high-performance digital products —
+              from polished frontends to resilient backend services.
             </p>
 
-            {/* btn & soxials */}
+            {/* button & socials */}
             <div className="flex flex-col gap-4 mt-8 xl:flex-row xl:gap-8">
-              <a href="/app/files/03c22v.pdf" download="03c22v.pdf">
+              <a href="/files/03c22v.pdf" download="Hik-Hik-CV.pdf">
                 <Button
                   variant="outline"
                   size="lg"
