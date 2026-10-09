@@ -160,3 +160,6 @@ storybook-static
 
 # Build output
 dist/
+
+# Keep the example env file in the repo
+!.env.example
