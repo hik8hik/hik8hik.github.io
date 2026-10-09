@@ -7,44 +7,47 @@ import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 
 export function ModeToggle() {
-  const { theme, setTheme } = useTheme();
-  const [currentTheme, setCurrentTheme] = React.useState(theme);
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
 
-  React.useEffect(() => {
-    setCurrentTheme(theme);
-  }, [theme]);
+  React.useEffect(() => setMounted(true), []);
 
-  const handleToggle = () => {
-    if (currentTheme === "light") {
-      setTheme("dark");
-    } else if (currentTheme === "dark") {
-      setTheme("system");
-    } else {
-      setTheme("light");
-    }
+  const cycle = () => {
+    const current = theme ?? "system";
+    if (current === "light") setTheme("dark");
+    else if (current === "dark") setTheme("system");
+    else setTheme("light");
   };
 
   const renderIcon = () => {
-    if (currentTheme === "light") {
-      return <Sun className="h-[1.2rem] w-[1.2rem]" />;
-    } else if (currentTheme === "dark") {
-      return <Moon className="h-[1.2rem] w-[1.2rem]" />;
-    } else {
-      return <Monitor className="h-[1.2rem] w-[1.2rem]" />;
+    if (!mounted) {
+      // Placeholder so SSR + first client render match
+      return <Monitor className="h-[1.2rem] w-[1.2rem] opacity-0" />;
     }
+    if (theme === "light") return <Sun className="h-[1.2rem] w-[1.2rem]" />;
+    if (theme === "dark") return <Moon className="h-[1.2rem] w-[1.2rem]" />;
+    return <Monitor className="h-[1.2rem] w-[1.2rem]" />;
   };
+
+  const label = !mounted
+    ? "Toggle theme"
+    : theme === "light"
+      ? "Light theme"
+      : theme === "dark"
+        ? "Dark theme"
+        : `System theme (${resolvedTheme ?? "auto"})`;
 
   return (
     <div className="flex space-x-2">
-      <Button variant="outline" size="sm" onClick={handleToggle}>
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={cycle}
+        aria-label={label}
+        title={label}
+      >
         {renderIcon()}
-        <span className="sr-only">
-          {currentTheme === "light"
-            ? "Light theme"
-            : currentTheme === "dark"
-            ? "Dark theme"
-            : "System theme"}
-        </span>
+        <span className="sr-only">{label}</span>
       </Button>
     </div>
   );
