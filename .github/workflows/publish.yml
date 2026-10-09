@@ -1,57 +1,39 @@
-# File: .github/workflows/publish.yml
-name: publish-to-github-pages
+name: Deploy to GitHub Pages
+
 on:
   push:
-    branches:
-      - master
+    branches: [main]
+  workflow_dispatch: # allows you to trigger it manually from the Actions tab
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
       - name: Setup Node.js ⚙️
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
+          cache: "npm" # or yarn if you switch back
 
       - name: Install dependencies 🔧
-        run: npm install
+        run: npm ci
 
-      - name: Setup Pages ⚙️
-        uses: actions/configure-pages@v4
+      - name: Build 🏗️
+        run: npm run build
+        env:
+          NEXT_PUBLIC_OUTPUT: export
+          # IMPORTANT: Add your Formspree ID here so the contact form works!
+          NEXT_PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_ID }}
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          static_site_generator: next
-
-      - name: Build with Next.js 🏗️
-        run: npx next build
-
-      - name: Upload artifact 📡
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .next
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Publish to GitHub Pages 🚀
-        id: deployment
-        uses: actions/deploy-pages@v4
+          folder: out
+          branch: gh-pages
+          clean: true # removes old files not in the new build
